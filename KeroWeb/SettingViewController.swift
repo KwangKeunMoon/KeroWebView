@@ -13,6 +13,10 @@ class SettingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let urlString = UserDefaults.standard.value(forKey: "startURL") as? String {
+            locationTextField.text = urlString
+        }
     }
     
     @IBAction func actionDismiss(_ sender: Any) {
@@ -22,5 +26,12 @@ class SettingViewController: UIViewController {
     @IBAction func actionSave(_ sender: Any) {
         UserDefaults.standard.set(self.locationTextField.text, forKey: "startURL")
         UserDefaults.standard.synchronize()
+        
+        let alert = UIAlertController(title: nil, message: "url-> \(locationTextField.text ?? " ")\nsaved.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "ok", style: .default, handler: { [weak self] _ in
+            self?.dismiss(animated: true, completion: nil)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
     }
 }
