@@ -92,9 +92,22 @@
                                     <action selector="actionRefresh:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HSd-z6-t91"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HED-q3-lo5">
+                                <rect key="frame" x="182" y="44" width="50" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="fSI-yd-d52"/>
+                                </constraints>
+                                <state key="normal" title="홈">
+                                    <color key="titleColor" red="1" green="0.35294117650000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="actionHome:" destination="BYZ-38-t0r" eventType="touchUpInside" id="djB-Y1-ZP8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="HED-q3-lo5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3cL-pK-6kA"/>
                             <constraint firstItem="GQJ-rJ-iAk" firstAttribute="top" secondItem="dN0-A1-Gj9" secondAttribute="bottom" id="4Ya-xC-vIp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dN0-A1-Gj9" secondAttribute="trailing" id="9Nt-LY-cii"/>
                             <constraint firstItem="dn8-Jt-Hvi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="9" id="9yQ-zc-snN"/>
@@ -107,6 +120,7 @@
                             <constraint firstItem="dN0-A1-Gj9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="c0K-v1-lgq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OEg-yd-8vi" secondAttribute="trailing" constant="16" id="cxa-MJ-9Z7"/>
                             <constraint firstItem="dj1-iE-fvN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hw9-2P-TjK"/>
+                            <constraint firstItem="HED-q3-lo5" firstAttribute="top" secondItem="DCo-TE-opx" secondAttribute="top" id="kh9-5O-Lde"/>
                             <constraint firstItem="OEg-yd-8vi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="obu-Lc-w1C"/>
                             <constraint firstItem="dj1-iE-fvN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pfG-cf-gFN"/>
                             <constraint firstItem="GQJ-rJ-iAk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qfj-gF-jZp"/>
