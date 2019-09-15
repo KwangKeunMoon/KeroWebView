@@ -40,8 +40,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func actionSetting(_ sender: Any) {
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "SettingViewController") {
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "SettingViewController") as? SettingViewController {
             self.present(vc, animated: true, completion: nil)
+            vc.delegate = self
         }
     }
     
@@ -75,5 +76,15 @@ extension ViewController: UITextFieldDelegate {
         }
         
         return true
+    }
+}
+
+extension ViewController: SettingViewControllerDelegate {
+    func refreshStartUrl() {
+        if let urlString = UserDefaults.standard.value(forKey: "startURL") as? String {
+            let myURL = URL(string: urlString)
+            let myRequest = URLRequest(url: myURL!)
+            webView.load(myRequest)
+        }
     }
 }

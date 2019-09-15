@@ -8,8 +8,14 @@
 
 import UIKit
 
+protocol SettingViewControllerDelegate: class {
+    func refreshStartUrl()
+}
+
 class SettingViewController: UIViewController {
     @IBOutlet weak var locationTextField: UITextField!
+    
+    weak var delegate: SettingViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +32,8 @@ class SettingViewController: UIViewController {
     @IBAction func actionSave(_ sender: Any) {
         UserDefaults.standard.set(self.locationTextField.text, forKey: "startURL")
         UserDefaults.standard.synchronize()
+        
+        delegate?.refreshStartUrl()
         
         let alert = UIAlertController(title: nil, message: "url-> \(locationTextField.text ?? " ")\nsaved.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "ok", style: .default, handler: { [weak self] _ in
