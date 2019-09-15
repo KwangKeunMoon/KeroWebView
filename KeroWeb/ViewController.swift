@@ -28,11 +28,11 @@ class ViewController: UIViewController {
         self.contentView.addSubview(webView)
         self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[webView]|", options: [], metrics: nil, views: ["webView": self.webView!]))
         self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[webView]|", options: [], metrics: nil, views: ["webView": self.webView!]))
-        self.refreshStartUrl()
+        self.loadStartUrl()
     }
     
     @IBAction func actionHome(_ sender: Any) {
-        self.refreshStartUrl()
+        self.loadStartUrl()
     }
     
     @IBAction func actionRefresh(_ sender: Any) {
@@ -54,7 +54,7 @@ class ViewController: UIViewController {
         self.webView.goForward()
     }
     
-    private func refreshStartURL() {
+    private func loadStartUrl() {
         if let urlString = UserDefaults.standard.value(forKey: "startURL") as? String {
             let myURL = URL(string: urlString)
             let myRequest = URLRequest(url: myURL!)
@@ -88,7 +88,7 @@ extension ViewController: UITextFieldDelegate {
 }
 
 extension ViewController: SettingViewControllerDelegate {
-    func refreshStartUrl() {
-        self.refreshStartUrl()
+    func onSaveComplete() {
+        self.loadStartUrl()
     }
 }

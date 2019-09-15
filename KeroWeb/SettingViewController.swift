@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SettingViewControllerDelegate: class {
-    func refreshStartUrl()
+    func onSaveComplete()
 }
 
 class SettingViewController: UIViewController {
@@ -33,7 +33,7 @@ class SettingViewController: UIViewController {
         UserDefaults.standard.set(self.locationTextField.text, forKey: "startURL")
         UserDefaults.standard.synchronize()
         
-        delegate?.refreshStartUrl()
+        delegate?.onSaveComplete()
         
         let alert = UIAlertController(title: nil, message: "url-> \(locationTextField.text ?? " ")\nsaved.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "ok", style: .default, handler: { [weak self] _ in
