@@ -104,6 +104,15 @@
                                     <action selector="actionHome:" destination="BYZ-38-t0r" eventType="touchUpInside" id="djB-Y1-ZP8"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gp-Fz-5J1">
+                                <rect key="frame" x="237" y="44" width="52" height="30"/>
+                                <state key="normal" title="캐시삭제">
+                                    <color key="titleColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="actionClearCache:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zf2-SQ-Uge"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -112,7 +121,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dN0-A1-Gj9" secondAttribute="trailing" id="9Nt-LY-cii"/>
                             <constraint firstItem="dn8-Jt-Hvi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="9" id="9yQ-zc-snN"/>
                             <constraint firstItem="dj1-iE-fvN" firstAttribute="top" secondItem="GQJ-rJ-iAk" secondAttribute="bottom" id="CYH-eu-nvW"/>
+                            <constraint firstItem="6gp-Fz-5J1" firstAttribute="top" secondItem="HED-q3-lo5" secondAttribute="top" id="DmP-Dn-nvW"/>
                             <constraint firstItem="DCo-TE-opx" firstAttribute="leading" secondItem="dn8-Jt-Hvi" secondAttribute="trailing" constant="10" id="EA5-uF-IAB"/>
+                            <constraint firstItem="6gp-Fz-5J1" firstAttribute="leading" secondItem="HED-q3-lo5" secondAttribute="trailing" constant="5" id="ENU-B9-zVu"/>
                             <constraint firstItem="dN0-A1-Gj9" firstAttribute="top" secondItem="DCo-TE-opx" secondAttribute="bottom" id="Gqj-Ud-6Sc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GQJ-rJ-iAk" secondAttribute="trailing" id="JWM-OJ-ZYU"/>
                             <constraint firstItem="dn8-Jt-Hvi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Que-J8-rEd"/>
@@ -121,12 +132,14 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OEg-yd-8vi" secondAttribute="trailing" constant="16" id="cxa-MJ-9Z7"/>
                             <constraint firstItem="dj1-iE-fvN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hw9-2P-TjK"/>
                             <constraint firstItem="HED-q3-lo5" firstAttribute="top" secondItem="DCo-TE-opx" secondAttribute="top" id="kh9-5O-Lde"/>
+                            <constraint firstItem="6gp-Fz-5J1" firstAttribute="height" secondItem="HED-q3-lo5" secondAttribute="height" id="nGZ-zM-ark"/>
                             <constraint firstItem="OEg-yd-8vi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="obu-Lc-w1C"/>
                             <constraint firstItem="dj1-iE-fvN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pfG-cf-gFN"/>
                             <constraint firstItem="GQJ-rJ-iAk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qfj-gF-jZp"/>
                             <constraint firstItem="OEg-yd-8vi" firstAttribute="leading" secondItem="qi7-5a-3YU" secondAttribute="trailing" constant="5" id="sKM-MZ-ZSM"/>
                             <constraint firstItem="dN0-A1-Gj9" firstAttribute="top" secondItem="dn8-Jt-Hvi" secondAttribute="bottom" id="tWv-aH-bHi"/>
                             <constraint firstItem="dj1-iE-fvN" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="tiN-oq-wge"/>
+                            <constraint firstItem="6gp-Fz-5J1" firstAttribute="centerY" secondItem="HED-q3-lo5" secondAttribute="centerY" id="yIk-gP-zis"/>
                             <constraint firstItem="qi7-5a-3YU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="z7O-aO-GJY"/>
                             <constraint firstItem="DCo-TE-opx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zCp-px-pYN"/>
                         </constraints>

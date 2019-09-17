@@ -54,6 +54,21 @@ class ViewController: UIViewController {
         self.webView.goForward()
     }
     
+    @IBAction func actionClearCache(_ sender: Any) {
+        WKWebsiteDataStore.default().fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { [weak self] (records) in
+            for record in records {
+                WKWebsiteDataStore.default().removeData(ofTypes: record.dataTypes, for: [record], completionHandler: {})
+            }
+            
+            let alert = UIAlertController(title: nil, message: "cache clear completed.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "ok", style: .default, handler: { [weak self] _ in
+                self?.dismiss(animated: true, completion: nil)
+            }))
+            
+            self?.present(alert, animated: true, completion: nil)
+        }
+    }
+    
     private func loadStartUrl() {
         if let urlString = UserDefaults.standard.value(forKey: "startURL") as? String {
             let myURL = URL(string: urlString)
