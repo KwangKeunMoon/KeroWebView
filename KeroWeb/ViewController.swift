@@ -53,7 +53,7 @@ class ViewController: UIViewController {
     @IBAction func actionForward(_ sender: Any) {
         self.webView.goForward()
     }
-    
+
     @IBAction func actionClearCache(_ sender: Any) {
         WKWebsiteDataStore.default().fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { [weak self] (records) in
             for record in records {
@@ -68,9 +68,14 @@ class ViewController: UIViewController {
             self?.present(alert, animated: true, completion: nil)
         }
     }
+
+    @IBAction func actionLocationTextFieldClear(_ sender: Any) {
+        self.locationTextField.text = nil
+
+    }
     
     private func loadStartUrl() {
-        if let urlString = UserDefaults.standard.value(forKey: "startURL") as? String {
+        if let urlString = UserDefaults.standard.value(forKey: "startURL") as? String, !urlString.isEmpty {
             let myURL = URL(string: urlString)
             let myRequest = URLRequest(url: myURL!)
             webView.load(myRequest)
@@ -92,6 +97,14 @@ extension ViewController: WKNavigationDelegate {
 
 extension ViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let isNewWindow = UserDefaults.standard.value(forKey: "newWindow") as? String, isNewWindow == "true" {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "AllWebViewController") as! AllWebViewController
+            vc.modalPresentationStyle = .fullScreen
+            vc.startUrl = locationTextField.text
+            self.present(vc, animated: true, completion: nil)
+            return true
+        }
+        
         if let urlString = textField.text {
             let myURL = URL(string: urlString)
             let myRequest = URLRequest(url: myURL!)

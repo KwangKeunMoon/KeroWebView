@@ -13,6 +13,7 @@
 		65474C9D232677CA00DB34AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65474C9C232677CA00DB34AB /* Assets.xcassets */; };
 		65474CA0232677CA00DB34AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65474C9E232677CA00DB34AB /* LaunchScreen.storyboard */; };
 		65474CA823267CDF00DB34AB /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65474CA723267CDF00DB34AB /* SettingViewController.swift */; };
+		65F3EF722367263E000A9818 /* AllWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F3EF712367263E000A9818 /* AllWebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		65474C9F232677CA00DB34AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65474CA1232677CA00DB34AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65474CA723267CDF00DB34AB /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		65F3EF712367263E000A9818 /* AllWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllWebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				65474C95232677C800DB34AB /* AppDelegate.swift */,
 				65474C97232677C800DB34AB /* ViewController.swift */,
+				65F3EF712367263E000A9818 /* AllWebViewController.swift */,
 				65474CA723267CDF00DB34AB /* SettingViewController.swift */,
 				65474C99232677C800DB34AB /* Main.storyboard */,
 				65474C9C232677CA00DB34AB /* Assets.xcassets */,
@@ -141,6 +144,7 @@
 				65474C98232677C800DB34AB /* ViewController.swift in Sources */,
 				65474C96232677C800DB34AB /* AppDelegate.swift in Sources */,
 				65474CA823267CDF00DB34AB /* SettingViewController.swift in Sources */,
+				65F3EF722367263E000A9818 /* AllWebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

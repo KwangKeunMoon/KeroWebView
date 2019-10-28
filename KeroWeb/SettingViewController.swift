@@ -14,6 +14,7 @@ protocol SettingViewControllerDelegate: class {
 
 class SettingViewController: UIViewController {
     @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var newWindowSwitch: UISwitch!
     
     weak var delegate: SettingViewControllerDelegate?
     
@@ -23,6 +24,11 @@ class SettingViewController: UIViewController {
         if let urlString = UserDefaults.standard.value(forKey: "startURL") as? String {
             locationTextField.text = urlString
         }
+        
+        self.newWindowSwitch.isOn = false
+        if let isNewWindow = UserDefaults.standard.value(forKey: "newWindow") as? String {
+            self.newWindowSwitch.isOn = isNewWindow == "true" ? true : false
+        }
     }
     
     @IBAction func actionDismiss(_ sender: Any) {
@@ -30,6 +36,11 @@ class SettingViewController: UIViewController {
     }
     
     @IBAction func actionSave(_ sender: Any) {
+        if self.locationTextField.text?.isEmpty == true {
+            self.dismiss(animated: true, completion: nil)
+            return
+        }
+        
         UserDefaults.standard.set(self.locationTextField.text, forKey: "startURL")
         UserDefaults.standard.synchronize()
         
@@ -41,5 +52,10 @@ class SettingViewController: UIViewController {
         }))
         
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func actionNewWindow(_ sender: Any) {
+        UserDefaults.standard.set(self.newWindowSwitch.isOn ? "true" : "false", forKey: "newWindow")
+        UserDefaults.standard.synchronize()
     }
 }
